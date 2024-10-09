@@ -8,6 +8,14 @@ public class Etudiant {
 	private String email;
 	private String telephone;
 
+	public Etudiant(int id, String nom, String prenom, String email, String telephone) {
+		this.id = id;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+	}
+
 	public int getId() {
 		return id;
 	}
