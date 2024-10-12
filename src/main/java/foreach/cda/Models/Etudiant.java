@@ -2,58 +2,58 @@ package foreach.cda.Models;
 
 public class Etudiant {
 
-	private int id;
-	private String nom;
-	private String prenom;
-	private String email;
-	private String telephone;
+	private int Id;
+	private String Nom;
+	private String Prenom;
+	private String Email;
+	private String Telephone;
 
 	public Etudiant(int id, String nom, String prenom, String email, String telephone) {
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.email = email;
-		this.telephone = telephone;
+		Id = id;
+		Nom = nom;
+		Prenom = prenom;
+		Email = email;
+		Telephone = telephone;
 	}
 
 	public int getId() {
-		return id;
+		return Id;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		Id = id;
 	}
 
 	public String getNom() {
-		return nom;
+		return Nom;
 	}
 
 	public void setNom(String nom) {
-		this.nom = nom;
+		Nom = nom;
 	}
 
 	public String getPrenom() {
-		return prenom;
+		return Prenom;
 	}
 
 	public void setPrenom(String prenom) {
-		this.prenom = prenom;
+		Prenom = prenom;
 	}
 
 	public String getEmail() {
-		return email;
+		return Email;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		Email = email;
 	}
 
 	public String getTelephone() {
-		return telephone;
+		return Telephone;
 	}
 
 	public void setTelephone(String telephone) {
-		this.telephone = telephone;
+		Telephone = telephone;
 	}
 
 }

@@ -5,22 +5,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import foreach.cda.Models.Etudiant;
+import foreach.cda.Services.EtudiantService;
+
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         JdbcTemplate jdbcTemplate = (JdbcTemplate) context.getBean("jdbcTemplate");
 
-        try {
-            String sql = "SELECT * FROM etudiants";
-            System.out.println(jdbcTemplate.queryForList(sql));
-            // jdbcTemplate.queryForObject(sql, new
-            // BeanPropertyRowMapper(Etudiants.class)));
-            jdbcTemplate.execute(sql);
-            System.out.println("Connexion Réussi");
-        } catch (DataAccessException e) {
-            System.out.println(e);
-            // TODO: handle exception
+        EtudiantService etudiantService = new EtudiantService(jdbcTemplate);
+        System.out.println(etudiantService.getAll());
+        for (Etudiant etudiant : etudiantService.getAll()) {
+            System.out.println(etudiant.getNom() + " " + etudiant.getPrenom());
         }
-        System.out.println("Hello world!");
     }
 }
